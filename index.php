@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-	<title>Index</title>
+	<title>Hjem</title>
 	<?php include "common/head.html"; ?>
 	<link rel="stylesheet" href="css/index.css" type="text/css"/>
 </head>
@@ -60,9 +60,15 @@
 			</section>
 			<section>
 				<h2>git hub</h2>
-				<a href="https://www.google.com/search?q=Github">
-					hyperlink
+				<a href="https://www.google.com/search?q=Github" class="btn">
+					Søketreff på google
 				</a>
+				<!--
+					<button type="button">Søketreff på google</button>
+					<script>
+						document.querySelector("button").onclick = x => location.href = "https://www.google.com/search?q=Github";
+					</script>
+				-->
 			</section>
 		</aside>
 		<?php include "common/footer.html"; ?>

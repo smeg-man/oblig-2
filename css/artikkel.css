@@ -16,11 +16,5 @@
 @media only screen and (max-width: 639px){ /* mobilversjon */
 	#wrapper{	
 		min-width: 100%;
-		grid-template-columns: 1fr;
-		grid-template-rows: 0fr 1fr 0fr;
-		grid-template-areas:
-			"h"
-			"m"
-			"f";
 	}
 }
