@@ -16,6 +16,10 @@
 				</h2>
 				<section>
 					<h3>Git</h3>
+					<figure class="float">
+						<img alt="GitHub commit" src="media/images/git_commit.png" />
+						<figcaption>Min siste commit i GitHub</figcaption>
+					</figure>
 					<p>
 						Git er et versjonskontrollsystem.
 						Et versjonskontrollsystem er et program som holder styr på endringer som blir gjort på en fil. Med git kan man gå tilbake til en eldre versjon av filen hvis man vil.
