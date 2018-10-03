@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+	<title>Media typer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Sindre"/>
+	<meta name="keywords" content="hiof, oblig, oppgave, nettside, nettsted"/>
+	<meta name="description" content="very good web site...">
+	
+	<link rel="icon" type="image/gif" href="media/images/favicon.gif"/>
+	<script src="scripts/anim_icon.js"></script>
+	
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+	<link rel="stylesheet" href="css/artikkel.css" type="text/css"/>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header id="page_header">
+			<span class="skull"></span>
+			<h1 id="title">
+				<a href="index.html">
+					Oblig 2
+				</a>
+			</h1>
+			<span class="skull"></span>
+			<nav id="navbar">
+				<a href="index.html">hjem</a>
+				<a href="git.html">git / github</a>
+				<a href="media_typer.html">media typer</a>
+				<a href="layout.html">CSS layouts</a>
+			</nav>
+		</header>
+		<main id="main_content">
+			<article>
+				<h2>
+					media typer
+				</h2>
+				<section>
+					<h3>hva er en media type?</h3>
+					<figure class="float">
+						<img alt="Printer" src="media/images/printer.jpg"/>
+						<figcaption>
+							Media typen printer er nyttig fordi man gjerne vil ha forskjellig design for skjermer og printere.
+						</figcaption>
+					</figure>
+					<p>
+						Media typer i <abbr title="Cascading Style Sheets">CSS</abbr> er sånn at man kan bruke et sett regler kun hvis nettsiden blir vist på en spesifik type dupeditt.
+						For eksempel: Man kan ha et stilark spesielt for printing, eller et stilark for skjermer, eller for skjermlesere.
+						Det å ha forskjellige stiler til forskjellige media typer er spesielt nyttig for printere,
+						siden man da kan gjøre bakgrunnen hvit og teksten svart,
+						vise <abbr title="Uniform Resource Locator">URL</abbr>ene til linkene på siden,
+						og kanskje skjule noen elementer som det ikke gir mening å printe ut.
+					</p>
+					<p>
+						World Wide Web Consortium kan kanskje forklare bedre:
+					</p>
+					<blockquote>One of the most important features of style sheets is that they specify how a document is to be presented on different media: on the screen, on paper, with a speech synthesizer, with a braille device, etc.
+						<br>
+						Certain CSS properties are only designed for certain media (e.g., the 'page-break-before' property only applies to paged media). On occasion, however, style sheets for different media types may share a property, but require different values for that property. For example, the 'font-size' property is useful both for screen and print media. The two media types are different enough to require different values for the common property; a document will typically need a larger font on a computer screen than on paper. Therefore, it is necessary to express that a style sheet, or a section of a style sheet, applies to certain media types.</blockquote>
+						<cite>
+							<a href="https://www.w3.org/TR/CSS21/media.html%23media-types">https://www.w3.org/TR/CSS21/media.html%23media-types</a>
+						</cite>
+				</section>
+				<section>
+					<h3>
+						andre media typer...
+					</h3>
+					<figure class="float">
+						<img alt="Laptop" src="media/images/laptop.gif" />
+						<figcaption>Laptop</figcaption>
+					</figure>
+					<p>
+						Media typer som TV Projection Handheld og flere brukes lite den dag i dag,
+						og det er fordi mange mener at responsivt design er bedre.
+						Det er fortsatt mulig å bruke disse, men det er ikke anbefalt.
+						I stedet kan man bruke media queryer for å sjekke størrelsen på viewporten for å bestemme hvordan siden skal se ut.
+					</p>
+				</section>
+				<section>
+					<h3>
+						eksempler
+					</h3>
+					<p>I dette eksemplet vil CSS-Reglene bare gjelde for visning i skjermer:</p>
+					<pre><code>@media only screen{
+	body{
+		background-color: salmon;
+		color: tomato;
+	}
+}</code></pre>
+					<p>I dette eksemplet vil CSS-Reglene bare gjelde for printing:</p>
+					<pre><code>@media only printer{
+	body{
+		background-color: white;
+		color: black;
+	}
+}</code></pre>
+					<p>I dette eksemplet vil CSS-Reglene bare gjelde for visning i skjermer under 700px i bredde;</p>
+					<pre><code>@media only screen and (max-width: 700px){
+	body{
+		background-color: gold;
+		color: yellow;
+	}
+}</code></pre>
+				</section>
+			</article>
+		</main>
+		<footer id="page_footer">
+			<span>
+				Copyright &copy; <time datetime="2018">2018</time> Sindre Valle Kopperud
+			</span>
+			|
+			<span>
+				E-post: <a href="mailto:sindrevk@hiof.no">sindrevk@hiof.no</a>
+			</span>
+		</footer>
+	</div>
+</body>
+</html>

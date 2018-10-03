@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+	<title>CSS Layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Sindre"/>
+	<meta name="keywords" content="hiof, oblig, oppgave, nettside, nettsted"/>
+	<meta name="description" content="very good web site...">
+	
+	<link rel="icon" type="image/gif" href="media/images/favicon.gif"/>
+	<script src="scripts/anim_icon.js"></script>
+	
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+	<link rel="stylesheet" href="css/artikkel.css" type="text/css"/>
+</head>
+
+<body>
+	<div id="wrapper">
+			<header id="page_header">
+				<span class="skull"></span>
+				<h1 id="title">
+					<a href="index.html">
+						Oblig 2
+					</a>
+				</h1>
+				<span class="skull"></span>
+				<nav id="navbar">
+					<a href="index.html">hjem</a>
+					<a href="git.html">git / github</a>
+					<a href="media_typer.html">media typer</a>
+					<a href="layout.html">CSS layouts</a>
+				</nav>
+			</header>
+		<main id="main_content">
+			<article>
+				<h2>
+					CSS Layouts
+				</h2>
+				<section>
+					<h3>Flexbox</h3>
+					<figure class="float">
+						<img alt="Artikler" src="media/images/flex.png" />
+						<figcaption>
+							På forsiden brukes flex for å vise artiklene.
+						</figcaption>
+					</figure>
+					<p>
+						Flexbox, også kalt flex, brukes til å gjøre <abbr title="Cascading Style Sheets">CSS</abbr> på elementer i én dimensjon.
+						Hvis man har en rekke elementer så er det god idé å bruke flex. 
+						Med flex kan man midtjustere, endre rekkefølge, lage mellomrom, og sikkert mye mer.
+						Retningen til flexboxen er vannrett som default,
+						men du kan få den til å bli loddrett ved å sette flex-direction til column.
+						Utover det finnes det mange måter å stilsette flexboxen,
+						som for eksempel å midtjustere elementene inni.
+					</p>
+					<h4>eksempel:</h4>
+					<pre><code>#container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}</code></pre>
+				</section>
+				<section>
+					<h3>Grid</h3>
+					<figure class="float">
+						<img alt="Forsiden" src="media/images/grid.png"/>
+						<figcaption>Jeg har brukt grid for å forme dette dettstedet. Her kan du se hvordan rutenettet på forsiden er bygd opp.</figcaption>
+					</figure>
+					<p>
+						Et element med display: grid får underelementene sine plassert i et rutenett.
+						Noe som er veldig nyttig med grid er grid-template-areas,
+						hvor man kan bestemme hvor elementene skal havne i rutenettet med en rekke string-verdier.
+						Eksempelet under viser hvordan det kan gjøres.
+					</p>
+					<h4>eksempel:</h4>
+					<pre><code>#container{
+	display: grid;
+	grid-template-areas:
+		"menu menu menu"
+		"main main sidebar"
+		"footer footer footer";
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr 3fr 1fr;
+}
+#menu{
+	grid-area: menu;
+}
+#main{
+	grid-area: main;
+}
+#sidebar{
+	grid-area: footer;
+}
+#footer{
+	grid-area: footer;
+}</code></pre>
+				</section>
+				<section>
+					<h3>Float</h3>
+					<figure class="float">
+						<img alt="Forsiden" src="media/images/float.jpg"/>
+						<figcaption>
+							Mange av bildene på dette nettstedet er posisjonert med float.
+							Legg gjerne merke til hvordan teksten ligger rundt bildet.
+						</figcaption>
+					</figure>
+					<p>
+						Float brukes til å flytte elementer til høyre eller venstre.
+						Float kan være vanskelig å bruke,
+						fordi elemented blir tatt ut av foreldreelementet.
+						Det kan føre til at foreldreelementet blir tomt og kollapser.
+						Det finnes måter å løse det problemet,
+						men for mange er det ikke værdt bryet.
+						Derfor er det som oftest bedre å bruke flex eller grid.
+						På dette nettstedet brukes float på noen av bildene
+						fordi jeg liker hvordan teksten legger seg rundt bildene.
+					</p>
+				</section>
+			</article>
+		</main>
+		<footer id="page_footer">
+			<span>
+				Copyright &copy; <time datetime="2018">2018</time> Sindre Valle Kopperud
+			</span>
+			|
+			<span>
+				E-post: <a href="mailto:sindrevk@hiof.no">sindrevk@hiof.no</a>
+			</span>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+#wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1.618fr;
+	grid-template-rows: 0fr 1fr 0fr;
+	justify-content: space-between;
+	align-content: space-between;
+	grid-gap: 7px;
+	grid-template-areas:
+		"h h"
+		"s m"
+		"f f";
+}
+
+
+/* sidekolonne */
+#sidebar{
+	grid-area: s;
+	padding: 2vh 5%;
+}
+#sidebar *{
+	max-width: 100%;
+}
+#sidebar h2{
+	margin-bottom: 10px;
+}
+#sidebar ul{
+	margin: 0;
+}
+
+
+/* hovedområde */
+#main_content{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+#main_content figure img{
+	max-height: 150px;
+}
+#main_content h2 a{
+	color: #fff;
+	text-decoration: none;
+}
+#main_content h2 a:hover{
+	text-decoration: underline;
+}
+#main_content figure:hover{
+	background-color: #fff;
+}
+#main_content figure:hover img{
+	background-color: #000;
+}
+
+
+/* hentet fra https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+#sidebar .video_container{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+#sidebar .video_container iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+
+/* responsivitet */
+@media only screen and (max-width: 639px){ /* mobilversjon */
+	#wrapper{	
+		min-width: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 0fr);
+		grid-template-areas:
+			"h"
+			"m"
+			"s"
+			"f";
+	}
+}

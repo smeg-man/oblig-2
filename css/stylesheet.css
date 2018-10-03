@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+@import url("../css/print.css") print;
+
+@font-face{
+	font-family: "Prototype";
+	src: url("../media/fonts/Prototype.eot");
+	src:
+		url("../media/fonts/Prototype.ttf"),
+		url("../media/fonts/prototype.woff2") format("woff2"),
+		url("../media/fonts/prototype.woff") format("woff"),
+		url("../media/fonts/Prototype.svg") format("svg"),
+		url("../media/fonts/Prototype.eot") format("embedded-opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body, #wrapper{
+	/*image-rendering: pixelated; /*vises som feil i validatoren, men er en del av CSS3: https://drafts.csswg.org/css-images-3/#the-image-rendering */
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+
+	color: white;
+	font-family: "Arial", "Helvetica", sans-serif;
+	tab-size: 4;
+
+	min-height: 100vh;
+}
+body{
+	background:
+		url("../media/images/greenmesh.gif"),
+		linear-gradient(to right, #000 0%,#555 50%,#000 100%);
+	background-blend-mode: lighten;
+	background-position-x: center;	
+}
+#wrapper{
+	background-color: rgba(0,0,0,0.75);
+	max-width: 85%;
+	min-width: 640px;
+	margin: auto;
+}
+a{
+	color: #77f;
+}
+#wrapper > *{
+	background-color: #000;
+}
+
+::selection{
+	background-color: rgba(255, 255, 255, 0.99);
+	color: #000;
+}
+h1, h2, h3, h4{
+	text-transform: capitalize;
+}
+
+
+/* header */
+#page_header{
+	grid-area: h;
+	color: #fff;
+	text-align: center;
+	
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, #000 25%, #000 75%, rgba(0, 0, 0, 0.5) 100%), url("../media/images/matrix.jpg");
+	background-size: auto 200%;
+	font-size: 0;	/* for å fjerne mellomrom mellom inline elementer */
+}
+#title{
+	display: inline-block;
+}
+#title a{
+	display: inline-block;
+	vertical-align: middle;
+	background: url("../media/images/overskrift.gif");
+	width: 259px;
+	height: 106px;
+}
+.skull{
+	background: url("../media/images/skull_cropped.gif");
+	background-size: 100% 100%;
+	display: inline-block;
+	vertical-align: middle;
+	width: 87px;
+	height: 100px;
+}
+#navbar{
+	text-align: center;
+	text-transform: capitalize;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #555;
+}
+#navbar a, .btn{	/* .btn brukes i sidekolonnen */
+	font-family: "Prototype", "Arial", "Helvetica", sans-serif;
+	background-color: #000;
+	color: #fff;
+
+	font-size: 1rem;
+	text-decoration: none;
+	letter-spacing: 1px;
+	
+	display: inline-block;
+	padding: 0.4% 0.7%;
+	border: 1px gold solid;
+	margin: 1px 0.5%;
+}
+#navbar a:hover, .btn:hover{
+	text-decoration: underline;
+	background-color: #333;
+}
+#navbar a:active, .btn:active{
+	text-decoration: none;
+	background-color: #777;
+}
+
+
+/* hovedinnhold */
+#main_content{
+	grid-area: m;
+	padding: 2vh 5%;
+}
+#main_content article,
+#main_content section{
+	clear: both;
+}
+#main_content p,
+#main_content pre{
+	margin: 1em 1%;
+}
+#main_content blockquote::before{
+	content: "\"";
+}
+#main_content blockquote{
+	font-style: italic;
+	margin-bottom: 0.5em;
+}
+#main_content blockquote::after{
+	content: "\"";
+}
+#main_content cite{
+	margin-left: 40px;
+}
+#main_content figure{	/* noe er lånt fra https://gist.github.com/MoritzBuetzer/4c89d9da1e15745cf2b0 */
+	max-width: 100%;
+	border: 3px gold groove;
+	border-bottom: none;
+	padding: 0.5%;
+	text-align: center;
+	margin: 0.5em 2%;
+	padding: 4px;
+	display: table;
+}
+#main_content figure.float{
+	float: right;
+	max-width: 50%;
+}
+#main_content figure img{
+	border: 1px gold solid;
+	max-width: 100%;
+	height: auto;
+	max-height: 15rem;
+	display: block;
+}
+#main_content figcaption{
+	border: 3px gold groove;
+	border-top: none;
+	
+	display: table-caption;
+	caption-side: bottom;
+
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+
+/* footer */
+#page_footer{
+	grid-area: f;
+	text-align: center;
+	border-top: 1px solid #555;
+	padding-top: 1%;
+
+	background-image: url("../media/images/rfirewal.gif");
+	background-position: center 100%;
+	background-repeat: repeat-x;
+	background-size: 33%;
+	padding-bottom: 2.5%;
+}
+#page_footer span{
+	display: inline-block;
+}
+
+
+/* responsivitet */
+@media only screen and (max-width: 433px){ /* krympe skallene og tittelen */
+	.skull{
+		height: calc(1.1494 * ((100vw - 259px) / 2));
+		max-width: calc((100vw - 259px) / 2);
+	}
+	#title{
+		max-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1500px){ /* for store skjærmer */
+	#wrapper{
+		max-width: 1275px;
+	}
+}

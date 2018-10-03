@@ -1,0 +1,38 @@
+/*
+	jeg glemte at vi skulle ha en css for printere.
+	selectorene er som de er for å øke spesifisiteten.
+	på den lyse siden så har jeg ikke brukt !important.
+*/
+*:not(#q):not(#w){
+	background: #fff;
+	color: #000;
+}
+
+html body #wrapper #page_header #navbar{
+	display: none;
+}
+
+body .skull{
+	display: none;
+}
+
+html body #wrapper #page_header h1 a{
+	font-size: 50px;
+	margin: 10px;
+	width: auto;
+	height: auto;
+}
+
+a:not(.no_url)::after{
+	content: " ("attr(href)")";
+}
+
+h1 a::after,
+h2 a::after,
+#page_footer a::after{
+	content: none;
+}
+
+html body #wrapper *, #wrapper main figure img{
+	border-color: #000;
+}
