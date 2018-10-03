@@ -11,7 +11,7 @@
 		<?php include "common/header.html"; ?>
 		<main id="main_content">
 			<h2>
-				Git / Github
+				git / Github
 			</h2>
 			<figure class="float">
 				<img alt="Spinnende hodeskalle og bein" src="media/images/skullgre.gif" />
@@ -21,14 +21,17 @@
 			<p>
 				Git er et versjonskontrollsystem.
 				Et versjonskontrollsystem er et program som holder styr på endringer som blir gjort på en fil.
+				<br>
 				Med git kan man gå tilbake til en eldre versjon av filen hvis man vil.
+				Man kan se hvem som har gjort endringer, og hvor endringene er, så med Git er det lettere å samarbeide.
 			</p>
 			<h3>GitHub</h3>
 			<p>
 				Github er en online tjeneste hvor man kan laste opp filene sine og så har man Git versjonskontroll. 
 			</p>
+			<h3>konklusjon</h3>
 			<p>
-				Aenean nec velit dui. Fusce vulputate tincidunt leo ut tristique. Integer tempus nunc lectus, at fringilla sapien faucibus nec. Aenean consequat iaculis arcu, ut consequat leo auctor ut. Cras auctor, ipsum vel porta laoreet, nulla libero ullamcorper orci, eget porttitor diam est ut metus. Aenean ultricies, odio non fermentum lobortis, nunc ex fringilla dolor, vestibulum auctor massa urna in eros. Nam vel commodo urna. Vivamus sit amet massa nec neque lobortis bibendum. Nam consequat fringilla augue et ultricies. Quisque congue mauris eget leo tincidunt tristique. Maecenas interdum dui non quam lobortis fermentum. Mauris tristique vehicula enim, et eleifend nisl aliquet sit amet. Nunc laoreet porta nibh, sit amet blandit justo accumsan sed. Pellentesque tristique ultrices enim ac fermentum. Praesent velit erat, pulvinar feugiat massa ut, consequat malesuada odio.
+				Jeg har bare brukt Gir i ca. en time nå, så jeg har ingen sterke meninger om det.
 			</p>
 		</main>
 		<?php include "common/footer.html"; ?>
